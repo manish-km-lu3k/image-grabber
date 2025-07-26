@@ -12,6 +12,7 @@ app.use(cors({
     origin: 'https://image-grabber-ov1j-client.vercel.app'
 }));
 
+
 app.use(express.json());
 
 app.post('/api/scrape', async (req, res) => {
