@@ -4,10 +4,8 @@ import Footer from './Footer';
 import CircularIndeterminate from './CircularIndeterminate';
 import { toast } from 'react-toastify';
 
-import dotenv from 'dotenv';
-dotenv.config({ path: '../../.env' });
-
 const Home = () => {
+  console.log(dotenv)
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
