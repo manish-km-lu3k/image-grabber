@@ -3,24 +3,28 @@ import '../Styles/home.css';
 import Footer from './Footer';
 import CircularIndeterminate from './CircularIndeterminate';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 
 const Home = () => {
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
   const downloadImages = async () => {
+
     try {
       setLoading(true);
+      const response = await fetch(`${process.env.SERVER_API}/scrape`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url }),
+      });
 
-      const response = await axios.post(`${process.env.SERVER_API}/scrape`, { url }, { responseType: 'blob' });
+      if (!response.ok) throw new Error('Download failed !!');
 
-      const blob = new Blob([response.data]);
+      const blob = await response.blob();
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
       link.download = 'images.zip';
       link.click();
-
       toast.success('Download Success !!');
     } catch (error) {
       console.log('Something went wrong: ' + error.message);
@@ -29,7 +33,6 @@ const Home = () => {
       setLoading(false);
     }
   };
-
 
   return (
     <>
