@@ -5,7 +5,7 @@ import CircularIndeterminate from './CircularIndeterminate';
 import { toast } from 'react-toastify';
 
 import dotenv from 'dotenv';
-dotenv.config({ path: '/.env' });
+dotenv.config({ path: '../../.env' });
 
 const Home = () => {
   const [url, setUrl] = useState('');
