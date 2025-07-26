@@ -9,7 +9,8 @@ const PORT = 8000;
 
 // app.use(cors());
 app.use(cors({
-    origin: 'https://image-grabber-ov1j-client.vercel.app'
+    origin: 'https://image-grabber-ov1j-client.vercel.app',
+    methods: ['GET','POST']
 }));
 
 
