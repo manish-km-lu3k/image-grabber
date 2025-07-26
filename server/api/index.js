@@ -129,4 +129,8 @@ function getExtension(url) {
     return ext && ext.length < 6 ? `.${ext}` : '.jpg';
 }
 
-export default serverless(app);
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+export default app;
