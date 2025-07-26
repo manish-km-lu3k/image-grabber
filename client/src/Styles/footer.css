@@ -1,0 +1,10 @@
+#footer {
+    position: absolute;
+    bottom: 0px;
+    height: 100px;
+    width: 1450px;
+    background-color: rgba(0, 0, 0, 0.812);
+    color: #ffcc00;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
