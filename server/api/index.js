@@ -15,7 +15,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.post('/api/scrape', async (req, res) => {
+app.post('/scrape', async (req, res) => {
     const { url } = req.body;
     if (!url) return res.status(400).json({ error: 'Missing URL' });
 
