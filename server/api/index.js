@@ -123,6 +123,3 @@ function getExtension(url) {
     return ext && ext.length < 6 ? `.${ext}` : '.jpg';
 }
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
