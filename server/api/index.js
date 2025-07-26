@@ -9,9 +9,8 @@ const PORT = 8000;
 
 app.use(cors({
     origin: 'https://image-grabber-ov1j-client.vercel.app',
-    methods: ['GET','POST']
+    methods: ['GET', 'POST']
 }));
-
 
 app.use(express.json());
 
@@ -59,8 +58,9 @@ app.post('/api/scrape', async (req, res) => {
                 }
             });
 
-            return [...urls];
+            return [...urls].slice(0, 50); // 🛑 LIMIT HERE
         });
+
 
         await browser.close();
 
