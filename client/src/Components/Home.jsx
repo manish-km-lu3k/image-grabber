@@ -12,7 +12,7 @@ const Home = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.REACT_APP_SERVER_API}/api/scrape`, {
+      const response = await fetch(`${process.env.VITE_SERVER_API}/api/scrape`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
