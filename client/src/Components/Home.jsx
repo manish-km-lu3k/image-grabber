@@ -5,7 +5,6 @@ import CircularIndeterminate from './CircularIndeterminate';
 import { toast } from 'react-toastify';
 
 const Home = () => {
-  console.log(dotenv)
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
