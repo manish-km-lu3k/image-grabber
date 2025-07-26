@@ -8,10 +8,7 @@ import serverless from 'serverless-http';
 const app = express();
 const PORT = 8000;
 
-app.use(cors({
-    origin: 'https://image-grabber-ov1j-client.vercel.app',
-    methods: ['GET', 'POST']
-}));
+app.use(cors());
 
 app.use(express.json());
 
