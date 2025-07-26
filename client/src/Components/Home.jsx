@@ -3,6 +3,7 @@ import '../Styles/home.css';
 import Footer from './Footer';
 import CircularIndeterminate from './CircularIndeterminate';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Home = () => {
   const [url, setUrl] = useState('');
