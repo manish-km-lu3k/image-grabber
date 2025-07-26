@@ -14,6 +14,8 @@ const Home = () => {
       setLoading(true);
       const response = await fetch(`${import.meta.env.VITE_SERVER_API}/api/scrape`, {
         method: 'POST',
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
       });
