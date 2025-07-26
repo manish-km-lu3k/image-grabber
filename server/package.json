@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./api/scrape.js"
+    "dev": "nodemon ./api/index.js"
   },
   "author": "Manish Kumar",
   "license": "ISC",

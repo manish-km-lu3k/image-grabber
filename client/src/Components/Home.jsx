@@ -13,7 +13,7 @@ const Home = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_SERVER_API}/api/scrape`, {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_API}/scrape`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
