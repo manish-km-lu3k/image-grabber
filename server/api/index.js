@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer';
 import archiver from 'archiver';
 import axios from 'axios';
 import cors from 'cors';
+import serverless from 'serverless-http';
 
 const app = express();
 const PORT = 8000;
@@ -122,3 +123,4 @@ function getExtension(url) {
     return ext && ext.length < 6 ? `.${ext}` : '.jpg';
 }
 
+export default serverless(app);
