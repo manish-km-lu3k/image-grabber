@@ -16,6 +16,5 @@ export default memo(function CircularIndeterminate() {
                 />
             </div>
         </>
-
     );
 });

@@ -9,22 +9,17 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
 
   const downloadImages = async () => {
-
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8000/scrape', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
-      });
 
-      if (!response.ok) throw new Error('Download failed !!');
+      const response = await axios.post(`${process.env.SERVER_API}/scrape`, { url }, { responseType: 'blob' });
 
-      const blob = await response.blob();
+      const blob = new Blob([response.data]);
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
       link.download = 'images.zip';
       link.click();
+
       toast.success('Download Success !!');
     } catch (error) {
       console.log('Something went wrong: ' + error.message);
@@ -33,6 +28,7 @@ const Home = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <>

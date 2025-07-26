@@ -1,5 +1,5 @@
 {
-  "name": "image-grabber",
+  "name": "image-grabber-server",
   "version": "1.0.0",
   "description": "download images from any site",
   "main": "index.js",
