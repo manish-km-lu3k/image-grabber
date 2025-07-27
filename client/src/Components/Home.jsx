@@ -16,7 +16,10 @@ const Home = () => {
       const response = await fetch(`https://image-grabber-beta.vercel.app/scrape`, {
         method: 'POST',
         mode: "cors",
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://image-grabber-ov1j-client.vercel.app'
+        },
         body: JSON.stringify({ url }),
       });
 

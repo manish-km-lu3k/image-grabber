@@ -12,8 +12,7 @@ app.use(cors(
     {
         origin: "https://image-grabber-ov1j-client.vercel.app",
         methods: ['GET', 'POST'],
-        credentials: true,
-        allowedHeaders: ['Content-Type'],
+        credentials: true
     }
 ));
 
