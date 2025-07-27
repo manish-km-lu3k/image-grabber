@@ -2,10 +2,10 @@
   "name": "image-grabber-server",
   "version": "1.0.0",
   "description": "download images from any site",
-  "main": "scrape.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./api/scrape.js"
+    "dev": "nodemon ./api/index.js"
   },
   "author": "Manish Kumar",
   "license": "ISC",
