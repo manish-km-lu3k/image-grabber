@@ -8,16 +8,7 @@ import serverless from 'serverless-http';
 const app = express();
 const PORT = 8000;
 
-app.use(cors(
-    {
-        origin: [
-            "https://image-grabber-ov1j-client.vercel.app",
-            "https://image-grabber-beta.vercel.app"
-        ],
-        methods: ['GET', 'POST'],
-        credentials: true
-    }
-));
+app.use(cors());
 
 app.use(express.json());
 
@@ -133,4 +124,4 @@ app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
 
-export default app;
+export default serverless(app);
