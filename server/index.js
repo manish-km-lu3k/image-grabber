@@ -18,7 +18,7 @@ app.use(cors(
 
 app.use(express.json());
 
-app.get('/', async (req,res) => {
+app.get('/', (req,res) => {
     res.send('Server is running');
 });
 
@@ -133,3 +133,4 @@ function getExtension(url) {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
