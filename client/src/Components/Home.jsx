@@ -18,7 +18,7 @@ const Home = () => {
         mode: "cors",
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://image-grabber-ov1j-client.vercel.app'
+          'Access-Control-Allow-Origin': 'https://image-grabber-beta.vercel.app'
         },
         body: JSON.stringify({ url }),
       });
