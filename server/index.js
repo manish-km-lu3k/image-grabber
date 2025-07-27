@@ -10,16 +10,17 @@ const PORT = 8000;
 
 app.use(cors(
     {
-        origin: ["https://image-grabber-ov1j-client.vercel.app"],
+        origin: "https://image-grabber-ov1j-client.vercel.app",
         methods: ['GET', 'POST'],
-        credentials: true
+        credentials: true,
+        allowedHeaders: ['Content-Type'],
     }
 ));
 
 app.use(express.json());
 
 app.get('/', async (req,res) => {
-    res.render('Server is running');
+    res.send('Server is running');
 });
 
 app.post('/scrape', async (req, res) => {
