@@ -13,7 +13,7 @@ const Home = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_SERVER_API}/api/scrape`, {
+      const response = await fetch(`https://image-grabber-beta.vercel.app/scrape`, {
         method: 'POST',
         mode: "cors",
         headers: { 'Content-Type': 'application/json' },

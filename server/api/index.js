@@ -10,7 +10,7 @@ const PORT = 8000;
 
 app.use(cors(
     {
-        origin: "https://image-grabber-ov1j-client.vercel.app",
+        origin: ["https://image-grabber-ov1j-client.vercel.app"],
         methods: ['GET', 'POST'],
         credentials: true
     }
@@ -18,7 +18,11 @@ app.use(cors(
 
 app.use(express.json());
 
-app.post('/api/scrape', async (req, res) => {
+app.get('/', async (req,res) => {
+    res.render('Server is running');
+});
+
+app.post('/scrape', async (req, res) => {
     const { url } = req.body;
     if (!url) return res.status(400).json({ error: 'Missing URL' });
 
@@ -129,6 +133,3 @@ function getExtension(url) {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-
-
-export default serverless(app);
