@@ -1,9 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "api/index.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/index", "dest": "api/index.js" }
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://image-grabber-beta.vercel.app/:path*"
+    }
   ]
 }
